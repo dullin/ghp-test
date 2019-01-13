@@ -1,6 +1,7 @@
 # Welcome to MkDocs
 
 For full documentation visit [mkdocs.org](https://mkdocs.org).
+[Le lien vers cours 2](cours2)
 
 ## Commands
 
