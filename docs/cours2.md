@@ -1,7 +1,6 @@
 ---
-title: INF135 - Normes de programmation et structures itératives
+title: INF135 - Normes de programmation et structures itératives - Cours 2
 author: Hugo Leblanc
-date: Cours 2
 pandocomatic_:
   use-template: 
   - presentation
