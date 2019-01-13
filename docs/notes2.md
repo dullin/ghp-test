@@ -17,6 +17,7 @@ while ¬\mlplaceholder{condition}¬
     ¬\mlplaceholder{instructions}¬
 end
 ~~~
+
 ~~~ {title="Exemple du while"}
 while x > 5
     fprintf('%g plus grand que 5.', x)
@@ -76,11 +77,13 @@ for ¬\mlplaceholder{compteur}¬ = ¬\mlplaceholder{début}¬:¬\mlplaceholder{s
     ¬\mlplaceholder{instructions}¬
 end
 ~~~
+
 ~~~ {title="Exemple du for"}
 for i = 1:5
     fprintf('%g est la valeur de i.\n', i)
 end
 ~~~
+
 ~~~ {title="Exemple du for avec un saut"}
 for i = 2:2:10
     fprintf('%g est la valeur de i.\n', i)
