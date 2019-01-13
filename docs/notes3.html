@@ -1,0 +1,177 @@
+<h1 id="structure-de-contrôle-itérative">Structure de contrôle itérative<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></h1>
+<p>Les structures de contrôle<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> permet de répétés une série d’instructions sous une condition ou la configuration d’un compteur. Cela nous évites à avoir à répété les mêmes instructions dans nos programmes.</p>
+<h2 id="while"><code>while</code></h2>
+<p>La boucle <code>while</code><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> répette une série d’instruction tant qu’une condition est respectés.</p>
+<pre title="Structure du while"><code>while ¬\mlplaceholder{condition}¬
+    ¬\mlplaceholder{instructions}¬
+end</code></pre>
+<pre title="Exemple du while"><code>while x &gt; 5
+    fprintf(&#39;%g plus grand que 5.&#39;, x)
+    x = x - 1
+end</code></pre>
+<p>La boucle <code>while</code> ressemble beacoup à la conditionnelles <code>if</code>. La différence fondamentale est, qu’après l’exécution des instructions de la structure de contrôle, le programme remonte au début de la boucle <code>while</code> et réévalue la condition et exécute le bloc d’instruction tant que<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> la condition est vrai<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
+<p>Une attention particulière doit être apporté avec la relation entre la condition et les instruction de la boucle. Il faut toujours avoir une méthode de ‘briser’ la boucle. Habituellement en modifiant la valeur d’une des variables utiilsé dans la condition durant les instructions de la boucle.</p>
+<h2 id="somme-cumulative-et-accumulation">Somme cumulative et accumulation</h2>
+<p>Un concept très souvent utiilsé est le concept d’accumulation à l’intérieur d’une variable dans un boucle. Le principe est d’avoir l’assignation d’une variabla qui reçoit le contenu d’elle-même avec d’autres informations.</p>
+<p>Le cas le plus simple, mais grandement utilisé est l’incrémentation d’une variable. L’incrémentation est l’ajout de la valeur 1 à une variable à répétition. L’incrémentation est souvent utilisé pour avoir un compteur</p>
+<pre title="Incrémentation d&#39;une variable"><code>x = 4
+while x &lt; 10
+    x = x + 1
+    fprintf(&#39;x = %g&#39;, x)
+end</code></pre>
+<h2 id="for"><code>for</code></h2>
+<p>La boucle <code>for</code><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> permet de configuer un compteur qui gère le nombre d’itérations de la boucle. La configuration du compteur à beaucoup d’option et donne beaucoup de possibilités au programmeur.</p>
+<p>Dans sa version la plus simple, le compteur incrémente de 1<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> à chaque itération de la boucle et va de la valeur de début jusqu’à la valeur de fin.</p>
+<pre title="Structure du for"><code>for ¬\mlplaceholder{compteur}¬ = ¬\mlplaceholder{début}¬:¬\mlplaceholder{fin}¬
+    ¬\mlplaceholder{instructions}¬
+end</code></pre>
+<pre title="Exemple du for"><code>for i = 1:5
+    fprintf(&#39;%g est la valeur de i.\n&#39;, i)
+end</code></pre>
+<p>Les informations de début et de fin sont des expressions, on peut donc facilement configurer avec l’utilisation de variable comme élément de début et de fin.</p>
+<pre title="Exemple du for avec une fin dynamique"><code>nTour = input(&#39;Le nombre de tours à faire dans la boucle&#39;)
+for iTour = 1:nTour
+    fprintf(&#39;Tour no %g.\n&#39;, iTour)
+end</code></pre>
+<p>Par conventtion, l’identificateur du compteur est la variable <code>i</code> pour un compteur sans contexte ou le contexte préfixé du <code>i</code>. Cela nous permet de</p>
+<p>Il est aussi possible de configuer le saut entre les itérations de la boucle. On ajoute le saut<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> en ajoutant ça valeur entre le début et la fin dans la configuration du compteur.</p>
+<pre title="Structure du for avec saut"><code>for ¬\mlplaceholder{compteur}¬ = ¬\mlplaceholder{début}¬:¬\mlplaceholder{saut}¬:¬\mlplaceholder{fin}¬
+    ¬\mlplaceholder{instructions}¬
+end</code></pre>
+<pre title="Exemple du for"><code>for i = 1:5
+    fprintf(&#39;%g est la valeur de i.\n&#39;, i)
+end</code></pre>
+<pre title="Exemple du for avec un saut"><code>for i = 2:2:10
+    fprintf(&#39;%g est la valeur de i.\n&#39;, i)
+end</code></pre>
+<h2 id="différence-entre-while-et-for">Différence entre <code>while</code> et <code>for</code></h2>
+<p>À la base, toutes les boucles peuvent être des <code>while</code>, le <code>for</code> apporte seulement de l’automatisation dans la configuration du compteur.</p>
+<p>La différence majeure est donc de voir si l’on peut se faciliter la vie en utilisant le <code>for</code>. Nous allons utiliser le <code>for</code> quand nous sommes capable de déterminer ou calculer le nombres d’itérations requises<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> quand le programme arrive à la boucle. Si il est impossible de déterminer le nombre d’itérations, nous utiliserons le <code>while</code></p>
+<h1 id="opérateurs-logiques">Opérateurs logiques</h1>
+<p>Les opérations logique<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> sont des opérations qui travaillent sur des opérandes<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> logiques.</p>
+<p>Nous utiliserons les opérateurs logiques pour combiner plusieurs comparaisons logiques ensemble.</p>
+<p>Les opérateurs logiques peuvent être indroduites dans tous les types d’expressions, leur priorité d’opération<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> s’ajoute après les opérateurs relationnels.</p>
+<h2 id="opérations-et-ou">Opérations ET <code>&amp;&amp;</code>, OU <code>||</code></h2>
+<p>Les deux opérations logique ET<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> et OU<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> sont utilisé pour combiné deux résultats logiques. Puisque les opérandes sont logiques, seules quatre possibilités sont à étudier. Le ET logique<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> permet d’avoir un résultat vrai si et seulement si les deux opérandes sont vrais. Le OU logique<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> permet d’avoir un résultat vrai si au moins un des deux opérandes est vrais. Nous somme capable de représenté ses différents cas dans une table de vérité.</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>A</code></th>
+<th><code>B</code></th>
+<th></th>
+<th style="text-align: center;"><code>A &amp;&amp; B</code></th>
+<th style="text-align: center;"><code>A || B</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<pre title="Exemple de détection d&#39;une valeur x entre 5 et 10"><code>if x &gt;= 5 &amp;&amp; x &lt;= 10
+    fprintf(&#39;x est entre 5 et 10.\n&#39;)
+end</code></pre>
+<pre title="Exemple de condition pour x ou y plus grand que 0"><code>if x &gt; 0 || y &gt; 10
+    fprintf(&#39;x ou y plus grand que 0.\n&#39;)
+end</code></pre>
+<p>Il faut faire attention avec les priorités d’opérations, les opérations logiques demandes d’avoir des opérations relationnels complète comme opérande<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.</p>
+<h2 id="négation-not">Négation NOT <code>~</code></h2>
+<p>La négration NOT<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> est une opération unitaire<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> qui inverse le contenu logique.</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>A</code></th>
+<th style="text-align: center;"><code>~A</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<pre title="Exemple de détection de x qui n&#39;est pas entre 5 et 10"><code>if ~(x &gt;= 5 &amp;&amp; x &lt;= 10)
+    fprintf(&#39;x est entre 5 et 10.\n&#39;)
+end</code></pre>
+<h2 id="court-circuitage-et">Court-circuitage <code>&amp;&amp;</code> et <code>||</code></h2>
+<p>Il est possible d’utiliser les opérateur <code>&amp;</code> et <code>|</code> avec un ou deux opérateurs consécutivement. Pour des raisons d’efficacités, nous utiliserons les doubles opérateurs qui incluent un mécanique de court-circuitage<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>. Le court-circtuigage permet à MATLAB de ne pas avoir à évalué les deux côtés de l’opération si la réponse peut être trouvé en regardant le premier opérande.</p>
+<h1 id="appel-et-utilisation-de-fonctions">Appel et utilisation de fonctions</h1>
+<p>MATLAB comporte des milliers de fonctions prête à réglé plusieurs problème de bases. Une fonction est un bloc de code pouvant réponde à une tâche simple et précise. Toutes les fonctions utilisent les même modalités d’utilisation. L’utilisation d’une fonction est appellé “L’appel d’une fonction”<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
+<p>L’appel de fonction de base utilise le nom de la fonction dans une instruction pour invoquer. Le programme va exécuter le contenue complet de la fonction appellé et ensuite retourner à son exécution normale.</p>
+<pre title="Exemple d&#39;appel de fonction avec leurs noms."><code>clear
+clc</code></pre>
+<p>Les deux modalités des appels sont:</p>
+<ul>
+<li>Les paramètres d’entrées;</li>
+<li>Le retour de la fonction.</li>
+</ul>
+<h2 id="paramètres-dentrés">Paramètres d’entrés</h2>
+<p>Les paramètres d’entrés sont les éléments préalables qu’une fonction à besoin pour être exécuté. Les paramètres d’entrés sont envoyés en utilisant une paire de parenthèses après le nom de la fonction dans l’instruction. Il est possible d’avoir plus qu’un paramètre en les délimitant avec une virgule.</p>
+<p>Chaque paramètre est une expression qui sera évalué avant d’être envoyé à la fonction. Cela nous permet donc d’utilisé des équations ou des variables comme paramètre d’entré.</p>
+<pre title="Exemple d&#39;appel de fonction avec des paramètres."><code>% Affiche Bonjour valeur 35.
+fprintf(&#39;Bonjour valeur %g\n&#39;, 15 + 20)
+clear(&#39;x&#39;)</code></pre>
+<h2 id="retour-de-fonction">Retour de fonction</h2>
+<p>Les fonctions ont la capacité d’envoyé un retour<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>. Le retour peut ensuite être utilisé dans notre programme.</p>
+<p>L’utilisation d’une fonction avec un retour dans un expression entraîne le retour de la fonction à remplacé l’appel à l’intérieur de la fonction appellé. Nous pouvons donc utilisé le retour d’une fonction comme résultat d’assignation ou même comme paramètre d’entrée d’une autre fonction.</p>
+<pre title="Exemple d&#39;appel de fonction avec des retours."><code>x = sin(0.3)
+% Utilisation d&#39;un retour dans les paramètres d&#39;une autre fonction.
+fprintf(&#39;Le restant entre %g et %g est %g, 45, 17, mod(45,17))</code></pre>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Le terme boucle est synonyme<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p><a href="https://www.mathworks.com/help/matlab/matlab_prog/loop-control-statements.html">Loop Control Statements</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="https://www.mathworks.com/help/matlab/ref/while.html">while</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>while en anglais est “tant que”<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Chaque “tour” de la boucle est nommé un itération de la boucle<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p><a href="https://www.mathworks.com/help/matlab/ref/for.html">for</a><a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>L’incrémentation est l’ajout d’une valeur à la valeur déjà existante dans la variable.<a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Le saut est aussi une expression comme le début et la fin.<a href="#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Un bon indice est l’utilisation d’une variable compteur qui incrémente à chaque itération.<a href="#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p><a href="https://www.mathworks.com/help/matlab/logical-operations.html">Logical Operations</a><a href="#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>Un opérande est les valeurs utilisées avec une opération. Dans 3+4, une opération d’addition, les opérandes sont 3 et 4 avec l’opérateur +.<a href="#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p><a href="https://www.mathworks.com/help/matlab/matlab_prog/operator-precedence.html">Operator Precedence</a><a href="#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p><a href="https://www.mathworks.com/help/matlab/ref/and.html">and, &amp;</a><a href="#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p><a href="https://www.mathworks.com/help/matlab/ref/or.html">or, |</a><a href="#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>Aussi appellé conjonction.<a href="#fnref15" class="footnote-back">↩</a></p></li>
+<li id="fn16"><p>Aussi appellé la disjonction.<a href="#fnref16" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>Par exemple, on ne peut pas écrire x &gt; 5 &amp;&amp; &lt; 10<a href="#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p><a href="https://www.mathworks.com/help/matlab/ref/not.html">not, ~</a><a href="#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p>L’opération unitaire à qu’un seul opérande.<a href="#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p><a href="https://www.mathworks.com/help/matlab/ref/logicaloperatorsshortcircuit.html">Logical Operators: Short-Circuit &amp;&amp; ||</a><a href="#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p><a href="https://www.mathworks.com/help/matlab/learn_matlab/calling-functions.html">Calling Functions</a><a href="#fnref21" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p>Cela s’apparente à la “réponse” de la fonction<a href="#fnref22" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
