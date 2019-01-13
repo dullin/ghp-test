@@ -2,6 +2,7 @@
 
 For full documentation visit [mkdocs.org](https://mkdocs.org).
 [Le lien vers cours 2](cours2)
+[Le lien vers notes 2](notes2)
 
 ## Commands
 
