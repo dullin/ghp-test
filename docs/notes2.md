@@ -1,10 +1,3 @@
----
-title: Structures itératives
-author: Hugo Leblanc
-pandocomatic_:
-  use-template: 
-  - handout
-...
 
 # Structure de contrôle itérative^[Le terme boucle est synonyme]
 Les structures de contrôle^[[Loop Control Statements](https://www.mathworks.com/help/matlab/matlab_prog/loop-control-statements.html)] permet de répétés une série d'instructions sous une condition ou la configuration d'un compteur. Cela nous évites à avoir à répété les mêmes instructions dans nos programmes.

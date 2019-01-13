@@ -1,11 +1,3 @@
----
-title: INF135 - Normes de programmation et structures itératives - Cours 2
-author: Hugo Leblanc
-pandocomatic_:
-  use-template: 
-  - presentation
-  - presentation-handout
-...
 
 # Retour sur les notions vues
 * Le flot et les instructions de programmation (scripts);
