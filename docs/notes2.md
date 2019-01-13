@@ -1,7 +1,6 @@
 ---
 title: Structures itératives
 author: Hugo Leblanc
-date: Cours 2
 pandocomatic_:
   use-template: 
   - handout
